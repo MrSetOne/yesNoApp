@@ -17,7 +17,7 @@ class MyMessageBubble extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             child: Text(
-              "Iteración numero: $message",
+              message,
               style: const TextStyle(color: Colors.black87),
             ),
           ),
