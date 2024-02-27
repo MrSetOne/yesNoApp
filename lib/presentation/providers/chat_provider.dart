@@ -7,12 +7,10 @@ class ChatProvider extends ChangeNotifier {
   final GetYesNo apiCall = GetYesNo();
 
   final List<Message> messages = [
-    Message(message: 'Hello', sender: Sender.other),
-    Message(message: 'Hi', sender: Sender.me),
-    Message(message: 'How are you?', sender: Sender.me),
-    Message(message: 'I am fine', sender: Sender.other),
-    Message(message: 'How about you?', sender: Sender.other),
-    Message(message: 'I am good', sender: Sender.me),
+    Message(
+        message: 'Hello',
+        sender: Sender.other,
+        imageUrl: 'https://media1.tenor.com/m/79djON9nNhMAAAAC/0001.gif'),
   ];
 
   Future<void> sendMessage(String msg) async {
@@ -43,6 +41,4 @@ class ChatProvider extends ChangeNotifier {
         duration: const Duration(milliseconds: 300),
         curve: Curves.bounceOut);
   }
-
-  // List<Message> get messages => _messages;
 }

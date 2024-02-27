@@ -15,7 +15,12 @@ class HisMessageBubble extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-              color: colors.secondary, borderRadius: BorderRadius.circular(20)),
+              color: colors.secondary,
+              borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.zero,
+                  bottomRight: Radius.circular(20),
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20))),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             child: Text(
@@ -27,13 +32,7 @@ class HisMessageBubble extends StatelessWidget {
         const SizedBox(
           height: 5,
         ),
-        message.imageUrl != null
-            ? _ImageBubble(
-                imageUrl: message.imageUrl ?? '',
-              )
-            : const SizedBox(
-                height: 0,
-              ),
+        _ImageBubble(imageUrl: message.imageUrl!),
         const SizedBox(
           height: 10,
         ),
